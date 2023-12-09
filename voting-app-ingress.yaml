@@ -8,9 +8,10 @@ metadata:
     app: demo-voting-app
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+
 spec:
   rules:
-    - host: vote.example.com
+    - host: vote.local
       http:
         paths:
           - path: /
@@ -21,7 +22,7 @@ spec:
                 port:
                   number: 80
 
-    - host: result.example.com
+    - host: result.local
       http:
         paths:
           - path: /
