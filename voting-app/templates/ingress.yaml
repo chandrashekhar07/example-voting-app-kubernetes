@@ -1,7 +1,6 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: voting-app
   name: voting-app-ingress
   labels:
     name: voting-app-ingress
@@ -11,7 +10,7 @@ metadata:
 
 spec:
   rules:
-    - host: vote.local
+    - host: {{ .Values.domainNames.votingApp }}
       http:
         paths:
           - path: /
@@ -22,7 +21,7 @@ spec:
                 port:
                   number: 80
 
-    - host: result.local
+    - host: {{ .Values.domainNames.resultApp }}
       http:
         paths:
           - path: /
