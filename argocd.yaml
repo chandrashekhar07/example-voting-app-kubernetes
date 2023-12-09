@@ -10,7 +10,7 @@ spec:
   source:
     path: voting-app
     repoURL: 'https://github.com/chandrashekhar07/example-voting-app-kubernetes'
-    targetRevision: helm
+    targetRevision: cicd
   sources: []
   project: default
   syncPolicy:
