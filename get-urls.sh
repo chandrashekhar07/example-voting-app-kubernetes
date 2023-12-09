@@ -1,2 +1,2 @@
-minikube service voting-service --url
-minikube service result-service --url
+minikube service voting-service --url -n voting-app
+minikube service result-service --url -n voting-app
