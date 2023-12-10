@@ -2,14 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: voting-app
+  namespace: argocd
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: voting-app
+    meta.helm.sh/release-namespace: voting-app
 spec:
   destination:
-    namespace: argocd
     name: ""
+    namespace: voting-app
     server: "https://kubernetes.default.svc"
   source:
     path: voting-app
-    repoURL: {{ .Values.gitOps.repoUrl }} 
+    repoURL: "https://github.com/chandrashekhar07/example-voting-app-kubernetes"
     targetRevision: {{ .Values.gitOps.branch }}
   sources: []
   project: default
