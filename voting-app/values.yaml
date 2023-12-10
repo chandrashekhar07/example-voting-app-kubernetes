@@ -5,3 +5,7 @@
 domainNames:
   votingApp: vote.local
   resultApp: result.local
+
+gitOps:
+  repoUrl: https://github.com/chandrashekhar07/example-voting-app-kubernetes
+  branch: cicd

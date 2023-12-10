@@ -4,13 +4,12 @@ metadata:
   name: voting-app
 spec:
   destination:
-    name: ''
-    namespace: voting-app
-    server: 'https://kubernetes.default.svc'
+    name: ""
+    server: "https://kubernetes.default.svc"
   source:
     path: voting-app
-    repoURL: 'https://github.com/chandrashekhar07/example-voting-app-kubernetes'
-    targetRevision: cicd
+    repoURL: {{ .Values.gitOps.repoUrl }} 
+    targetRevision: {{ .Values.gitOps.branch }}
   sources: []
   project: default
   syncPolicy:
